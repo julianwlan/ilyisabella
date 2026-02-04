@@ -111,3 +111,9 @@ h2 {
     background-color: black;
     color: white;
 }
+
+#relation-counter {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+}
