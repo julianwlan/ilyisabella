@@ -63,6 +63,7 @@ a {
 
 .text {
     text-align: center;
+    font-size: 1.5em;
     border-bottom: 1px solid black;
 }
 
@@ -72,14 +73,15 @@ a {
     text-decoration: underline;
 }
 
-.imgs {
+#imgs {
     display: grid;
 
     grid-template-columns: 1fr;
     justify-items: center;
+    overflow: visible;
 }
 
-.imgs img {
+#imgs img {
     width: 80%;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
@@ -134,8 +136,18 @@ h2 {
     border: 2px solid black;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   #gallery-container {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #imgs img {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1000px) {
+    #gallery-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

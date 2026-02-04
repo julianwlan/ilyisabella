@@ -12,7 +12,7 @@ function update() {
 
   counter.innerHTML = `
     <strong>Zusammen seit:</strong><br>
-    ${days} Tage ${hours} Std ${minutes} Min ${seconds} Sek ❤️
+    ${days} Tagen ${hours} Std ${minutes} Min ${seconds} Sek ❤️
   `;
 }
 
