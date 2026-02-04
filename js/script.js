@@ -1,5 +1,5 @@
 const counter = document.getElementById("relation-counter");
-const startDate = new Date(2025, 11, 12, 18, 0, 0);
+const startDate = new Date(2025, 11, 12, 16, 0, 0);
 
 function update() {
   const now = new Date();
