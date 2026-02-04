@@ -72,8 +72,18 @@ a {
     text-decoration: underline;
 }
 
+.imgs {
+    display: grid;
+
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
 .imgs img {
-    width: 100%;
+    width: 80%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    border: 2px solid black;
 }
 
 h2 {
@@ -83,5 +93,21 @@ h2 {
 
 .end {
     text-align: center;
-    
+}
+
+.contact-btn {
+    background-color: rgb(73, 23, 119);
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 30px;
+    border: 2px solid black;
+    color: grey;
+    font-weight: bold;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.contact-btn:hover {
+    background-color: black;
+    color: white;
 }
