@@ -35,7 +35,7 @@ navigator.geolocation.getCurrentPosition(async (pos) => {
 
     console.log(data);
 
-    const cityName = data.address.hamlet;
+    const cityName = data.address.suburb;
 
     const weather = await fetchData(`http://api.weatherapi.com/v1/forecast.json?days=4&key=ff76f32b6d9940a9b2674941262005&lang
     =en&q=${latitude},${longitude}`);
