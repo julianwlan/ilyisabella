@@ -31,11 +31,11 @@ navigator.geolocation.getCurrentPosition(async (pos) => {
     const latitude = pos.coords.latitude;
     const longitude = pos.coords.longitude;
 
-    const data = await fetchData(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=18&addressdetails=1`);
+    const data = await fetchData(`https://api.opencagedata.com/geocode/v1/json?key=6dd822cb65c648db99589b65edfb6a90&q=${latitude}+${longitude}&pretty=1&no_annotations=1`);
 
     console.log(data);
 
-    const cityName = data.address.suburb;
+    const cityName = data.results[0].components.suburb;
 
     const weather = await fetchData(`https://api.weatherapi.com/v1/forecast.json?days=4&key=ff76f32b6d9940a9b2674941262005&lang
     =en&q=${latitude},${longitude}`);
