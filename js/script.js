@@ -16,5 +16,37 @@ function update() {
   `;
 }
 
+const uv_banner = document.querySelector('#uv-banner');
+
+const fetchData = async (url) => {
+  try {
+    const res = await fetch(url);
+    return (await res).json();
+  } catch(err) {
+    console.log(err);
+  }
+}
+
+navigator.geolocation.getCurrentPosition(async (pos) => {
+    const latitude = pos.coords.latitude;
+    const longitude = pos.coords.longitude;
+
+    const data = await fetchData(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=18&addressdetails=1`);
+
+    console.log(data);
+
+    const cityName = data.address.hamlet;
+
+    const weather = await fetchData(`http://api.weatherapi.com/v1/forecast.json?days=4&key=ff76f32b6d9940a9b2674941262005&lang
+    =en&q=${latitude},${longitude}`);
+
+    console.log(weather);
+
+    uv_banner.innerHTML = `UV-Index: ${weather.current.uv} | Max. UV-Index heute: ${weather.forecast.forecastday[0].day.uv} (Standort: ${cityName})`
+}, (err) => {
+    console.log(err);
+});
+
+
 update();
 setInterval(update, 1000);

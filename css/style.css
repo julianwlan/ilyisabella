@@ -1,8 +1,33 @@
+.audiowide-regular {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+::selection {
+    background-color: white;
+}
+
 * {
+    box-sizing: border-box;
     background-color: blueviolet;
     margin: 0;
     padding: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#uv-banner {
+    width: 100%;
+    height: 30px;
+    margin-top: 120px;
+
+    background-color: red;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
 }
 
 #nav-bar {
